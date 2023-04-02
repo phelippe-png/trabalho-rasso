@@ -1,21 +1,26 @@
 package FizzBuzz
 
 fun main(args: Array<String>) {
-    var listNumeros: MutableList<Int>
+    var listNumeros: MutableList<Int> = ArrayList()
+    var primeiroNumero: Int
+    var segundoNumero: Int
 
     do {
-        println("Quantos números deseja informar: ")
-        var intervaloNumeros = readLine()?.toIntOrNull()
+        println("Informe o 1° número: ")
+        primeiroNumero = readLine()?.toIntOrNull()!!
 
-        if (intervaloNumeros == null)
+        if (primeiroNumero == null)
             println("Informe apenas números!")
-    } while (intervaloNumeros == null)
+    } while (primeiroNumero == null)
 
-    while(listNumeros.count()){
+    do {
+        println("Informe o 2° número: ")
+        segundoNumero = readLine()?.toIntOrNull()!!
 
-    }
+        if (segundoNumero == null)
+            println("Informe apenas números!")
+    } while (segundoNumero == null)
 
-    println("Informe o primeiro número: ")
-    val numero = readLine()?.toIntOrNull()
-    listNumeros.add()
+    var comportamento = ComportamentoFizzBuzz()
+    println(comportamento.fizzBuzz(primeiroNumero, segundoNumero))
 }
